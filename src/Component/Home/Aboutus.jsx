@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
-import test0 from "../img/aboutus.png";
+import test0 from "../../assets/img/aboutus.png";
 import "./Aboutus.css";
 function Aboutus() {
   return (

@@ -14,7 +14,7 @@ import { useNavigate, NavLink } from "react-router-dom";
 import { Grid, CssBaseline, Button } from "@material-ui/core";
 import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
-import signupImg from "../img/inscrit.PNG";
+import signupImg from "../../assets/img/inscrit.PNG";
 
 function Sign() {
   /*****alert mui*****/
@@ -144,11 +144,18 @@ function Sign() {
         <h1>Join us!</h1>
       </div>
       <CssBaseline />
-      <div  className="barRight2" >
+      <div className="barRight2">
         <div className="signup__form">
-          <p style={{color: '#fff', margin: '0'}}>Sign Up</p>
-          <div style={{display: 'flex', justifyContent:'center', alignItems: 'center', gap: '2rem'}}>
-            <p style={{color:'#fff', fontSize: '1.3rem' }}>
+          <p style={{ color: "#fff", margin: "0" }}>Sign Up</p>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "2rem",
+            }}
+          >
+            <p style={{ color: "#fff", fontSize: "1.3rem" }}>
               Already member ?
             </p>
             <NavLink
@@ -163,158 +170,158 @@ function Sign() {
               Login
             </NavLink>
           </div>
-        
-        {/*****************formulaire****************/}
-        <FormControl required sx={{ m: 1, width: "52ch" }} variant="outlined">
-          <InputLabel htmlFor="name">First Name</InputLabel>
-          <OutlinedInput
-            name="name"
-            onChange={handleChange}
-            value={values.name}
-            id="name"
-            label="First Name"
-            sx={{
-              "& fieldset": {
-                borderColor: "#FFFFFF80",
-              },
-            }}
-            style={{ color: "#ffffff" }}
-          />
-          <Stack spacing={2} sx={{ width: "100%" }}>
-            {formErrors.name && (
-              <Alert severity="error">{formErrors.name}</Alert>
-            )}
-          </Stack>
-        </FormControl>
 
-        <FormControl required sx={{ m: 1, width: "52ch" }} variant="outlined">
-          <InputLabel htmlFor="lastname">Last Name</InputLabel>
-          <OutlinedInput
-            name="lastname"
-            onChange={handleChange}
-            value={values.lastname}
-            id="lastname"
-            label="Last Name"
-            sx={{
-              "& fieldset": {
-                borderColor: "#FFFFFF80",
-              },
-            }}
-            style={{ color: "#ffffff" }}
-          />
-          <Stack spacing={2} sx={{ width: "100%" }}>
-            {formErrors.lastname && (
-              <Alert severity="error">{formErrors.lastname}</Alert>
-            )}
-          </Stack>
-        </FormControl>
-        {/* </div> */}
-        <FormControl required sx={{ m: 1, width: "52ch" }} variant="outlined">
-          <InputLabel htmlFor="email">Email</InputLabel>
-          <OutlinedInput
-            name="email"
-            onChange={handleChange}
-            value={values.email}
-            id="email"
-            label="Email"
-            sx={{
-              "& fieldset": {
-                borderColor: "#FFFFFF80",
-              },
-            }}
-            style={{ color: "#ffffff" }}
-          />
-          <Stack spacing={2} sx={{ width: "100%" }}>
-            {formErrors.email && (
-              <Alert severity="error">{formErrors.email}</Alert>
-            )}
-          </Stack>
-        </FormControl>
+          {/*****************formulaire****************/}
+          <FormControl required sx={{ m: 1, width: "52ch" }} variant="outlined">
+            <InputLabel htmlFor="name">First Name</InputLabel>
+            <OutlinedInput
+              name="name"
+              onChange={handleChange}
+              value={values.name}
+              id="name"
+              label="First Name"
+              sx={{
+                "& fieldset": {
+                  borderColor: "#FFFFFF80",
+                },
+              }}
+              style={{ color: "#ffffff" }}
+            />
+            <Stack spacing={2} sx={{ width: "100%" }}>
+              {formErrors.name && (
+                <Alert severity="error">{formErrors.name}</Alert>
+              )}
+            </Stack>
+          </FormControl>
 
-        <FormControl required sx={{ m: 1, width: "52ch" }} variant="outlined">
-          <InputLabel htmlFor="password">Password</InputLabel>
-          <OutlinedInput
-            name="password"
-            onChange={handleChange}
-            value={values.password}
-            id="password"
-            label="Password"
-            sx={{
-              "& fieldset": {
-                borderColor: "#FFFFFF80",
-              },
-            }}
-            style={{ color: "#ffffff" }}
-            type={showPassword ? "text" : "password"}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  style={{ color: "rgb(159, 156, 156)" }}
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword}
-                  onMouseDown={handleMouseDownPassword}
-                  edge="end"
-                >
-                  {showPassword ? <Visibility /> : <VisibilityOff />}
-                </IconButton>
-              </InputAdornment>
-            }
-          />
-          <Stack spacing={2} sx={{ width: "100%" }}>
-            {formErrors.password && (
-              <Alert severity="error">{formErrors.password}</Alert>
-            )}
-          </Stack>
-        </FormControl>
+          <FormControl required sx={{ m: 1, width: "52ch" }} variant="outlined">
+            <InputLabel htmlFor="lastname">Last Name</InputLabel>
+            <OutlinedInput
+              name="lastname"
+              onChange={handleChange}
+              value={values.lastname}
+              id="lastname"
+              label="Last Name"
+              sx={{
+                "& fieldset": {
+                  borderColor: "#FFFFFF80",
+                },
+              }}
+              style={{ color: "#ffffff" }}
+            />
+            <Stack spacing={2} sx={{ width: "100%" }}>
+              {formErrors.lastname && (
+                <Alert severity="error">{formErrors.lastname}</Alert>
+              )}
+            </Stack>
+          </FormControl>
+          {/* </div> */}
+          <FormControl required sx={{ m: 1, width: "52ch" }} variant="outlined">
+            <InputLabel htmlFor="email">Email</InputLabel>
+            <OutlinedInput
+              name="email"
+              onChange={handleChange}
+              value={values.email}
+              id="email"
+              label="Email"
+              sx={{
+                "& fieldset": {
+                  borderColor: "#FFFFFF80",
+                },
+              }}
+              style={{ color: "#ffffff" }}
+            />
+            <Stack spacing={2} sx={{ width: "100%" }}>
+              {formErrors.email && (
+                <Alert severity="error">{formErrors.email}</Alert>
+              )}
+            </Stack>
+          </FormControl>
 
-        <FormControl required sx={{ m: 1, width: "52ch" }} variant="outlined">
-          <InputLabel htmlFor="confirmpassword">Confirm Password</InputLabel>
-          <OutlinedInput
-            name="confirmpassword"
-            onChange={handleChange}
-            value={values.confirmpassword}
-            id="confirmpassword"
-            label="Confirm Password"
-            sx={{
-              "& fieldset": {
-                borderColor: "#FFFFFF80",
-              },
-            }}
-            style={{ color: "#ffffff" }}
-            type={showPassword ? "text" : "password"}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  style={{ color: "rgb(159, 156, 156)" }}
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword}
-                  onMouseDown={handleMouseDownPassword}
-                  edge="end"
-                >
-                  {showPassword ? <Visibility /> : <VisibilityOff />}
-                </IconButton>
-              </InputAdornment>
-            }
-          />
-          <Stack spacing={2} sx={{ width: "100%" }}>
-            {formErrors.confirmpassword && (
-              <Alert severity="error">{formErrors.confirmpassword}</Alert>
-            )}
-          </Stack>
-        </FormControl>
-        <div
-          onClick={handleclick}
-          style={{ float: "left", marginLeft: "130px" }}
-        >
-          <button
-            disabled={isValid() ? false : true}
-            name="button"
-            type="submit"
-           className="signup__btn"
+          <FormControl required sx={{ m: 1, width: "52ch" }} variant="outlined">
+            <InputLabel htmlFor="password">Password</InputLabel>
+            <OutlinedInput
+              name="password"
+              onChange={handleChange}
+              value={values.password}
+              id="password"
+              label="Password"
+              sx={{
+                "& fieldset": {
+                  borderColor: "#FFFFFF80",
+                },
+              }}
+              style={{ color: "#ffffff" }}
+              type={showPassword ? "text" : "password"}
+              endAdornment={
+                <InputAdornment position="end">
+                  <IconButton
+                    style={{ color: "rgb(159, 156, 156)" }}
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                    edge="end"
+                  >
+                    {showPassword ? <Visibility /> : <VisibilityOff />}
+                  </IconButton>
+                </InputAdornment>
+              }
+            />
+            <Stack spacing={2} sx={{ width: "100%" }}>
+              {formErrors.password && (
+                <Alert severity="error">{formErrors.password}</Alert>
+              )}
+            </Stack>
+          </FormControl>
+
+          <FormControl required sx={{ m: 1, width: "52ch" }} variant="outlined">
+            <InputLabel htmlFor="confirmpassword">Confirm Password</InputLabel>
+            <OutlinedInput
+              name="confirmpassword"
+              onChange={handleChange}
+              value={values.confirmpassword}
+              id="confirmpassword"
+              label="Confirm Password"
+              sx={{
+                "& fieldset": {
+                  borderColor: "#FFFFFF80",
+                },
+              }}
+              style={{ color: "#ffffff" }}
+              type={showPassword ? "text" : "password"}
+              endAdornment={
+                <InputAdornment position="end">
+                  <IconButton
+                    style={{ color: "rgb(159, 156, 156)" }}
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                    edge="end"
+                  >
+                    {showPassword ? <Visibility /> : <VisibilityOff />}
+                  </IconButton>
+                </InputAdornment>
+              }
+            />
+            <Stack spacing={2} sx={{ width: "100%" }}>
+              {formErrors.confirmpassword && (
+                <Alert severity="error">{formErrors.confirmpassword}</Alert>
+              )}
+            </Stack>
+          </FormControl>
+          <div
             onClick={handleclick}
+            style={{ float: "left", marginLeft: "130px" }}
           >
-            Sign Up
-          </button>
+            <button
+              disabled={isValid() ? false : true}
+              name="button"
+              type="submit"
+              className="signup__btn"
+              onClick={handleclick}
+            >
+              Sign Up
+            </button>
           </div>
         </div>
       </div>

@@ -4,22 +4,22 @@ import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
 import { ImCross } from "react-icons/im";
 import MenuIcon from "@mui/icons-material/Menu";
-import logo from "../img/logo.png";
-import { Link, NavLink, Navigate, useNavigate } from "react-router-dom";
+import logo from "../../assets/img/logo.png";
+import { NavLink, useNavigate } from "react-router-dom";
 import Home from "../Home/Home";
 import Tournaments from "../Tournaments/Tournaments";
 import Videos from "../Videos/Videos";
 import "./nav.css";
 import { useWindowSize } from "../../utils/useSizeWindow";
-import navIcon1 from "../img/nav-icon1.svg";
-import navIcon2 from "../img/nav-icon2.svg";
-import navIcon3 from "../img/nav-icon3.svg";
+import navIcon1 from "../../assets/img/nav-icon1.svg";
+import navIcon2 from "../../assets/img/nav-icon2.svg";
+import navIcon3 from "../../assets/img/nav-icon3.svg";
 import { useState } from "react";
 const pages = ["Home", "Tournaments", "Videos"];
 
 function Nav() {
   const { width } = useWindowSize();
-const navigate = useNavigate()
+  const navigate = useNavigate();
   const [openDrawer, setOpenDrawer] = useState(false);
   //barre recherche fin
   const links = ["Home", "Videos", "Tournaments"];
@@ -33,9 +33,13 @@ const navigate = useNavigate()
           {links?.map((link, index) => {
             return (
               // <Link to={link} className="link__route">
-                <li key={index} className="nav__link" onClick={()=> navigate(`/${link}`)}>
-                  {link}
-                </li>
+              <li
+                key={index}
+                className="nav__link"
+                onClick={() => navigate(`/${link}`)}
+              >
+                {link}
+              </li>
               // </Link>
             );
           })}
@@ -62,9 +66,13 @@ const navigate = useNavigate()
             <ul className="drawer__links">
               {links?.map((link, index) => {
                 return (
-              
-                    <li className="drawer__link " key={index} onClick={()=> navigate(`/${link}`)}>{link}</li>
-                  
+                  <li
+                    className="drawer__link "
+                    key={index}
+                    onClick={() => navigate(`/${link}`)}
+                  >
+                    {link}
+                  </li>
                 );
               })}
             </ul>
@@ -95,7 +103,7 @@ const navigate = useNavigate()
                 <img src={navIcon3} alt="" />
               </a>
             </div>
-            <div style={{marginTop: '8rem', paddingLeft: '2rem'}}>
+            <div style={{ marginTop: "8rem", paddingLeft: "2rem" }}>
               <p>© All Right Reserved</p>
             </div>
           </div>

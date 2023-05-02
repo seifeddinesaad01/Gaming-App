@@ -10,7 +10,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { Grid, CssBaseline, Button } from "@material-ui/core";
 import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
-import lockImg from "../img/lock.png";
+import lockImg from "../../assets/img/lock.png";
 function Forgotpass() {
   /*****alert mui*****/
   const Alert = React.forwardRef(function Alert(props, ref) {

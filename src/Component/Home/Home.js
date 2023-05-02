@@ -1,5 +1,5 @@
 import React from "react";
-import test0 from "../img/test0.jpg";
+import test0 from "../../assets/img/test0.jpg";
 import "./Home.css";
 import Button from "@mui/material/Button";
 import { NavLink } from "react-router-dom";

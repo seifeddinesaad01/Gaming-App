@@ -1,8 +1,8 @@
 import React from "react";
-import test0 from "../img/hellosignup.jpg";
+import test0 from "../../assets/img/hellosignup.jpg";
 //import './Home.css';
 import "./Hellosignup.css";
-import gameBg from "../img/banner-bg.png";
+import gameBg from "../../assets/img/banner-bg.png";
 import { NavLink } from "react-router-dom";
 function Hellosignup() {
   return (
