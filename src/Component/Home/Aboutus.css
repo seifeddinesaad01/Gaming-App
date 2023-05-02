@@ -1,0 +1,46 @@
+.about__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2rem;
+  gap: 3rem;
+  margin-top: 1rem;
+  min-height: 100vh;
+  border-top: 5px solid blue;
+}
+.about__text {
+  width: 40%;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+@media only screen and (max-width: 1300px) {
+  .about__text {
+    width: 80%;
+    text-align: center;
+  }
+}
+
+.about__image {
+  height: 30rem;
+}
+
+@media only screen and (max-width: 1300px) {
+  .about__image {
+    height: 20rem !important;
+  }
+}
+@media only screen and (max-width: 1300px) {
+  .about__image {
+    height: 15rem !important;
+  }
+}
+@media only screen and (max-width: 427px) {
+  .about__image {
+    height: 10rem !important;
+  }
+  .about__text {
+    font-size: 1rem;
+  }
+}

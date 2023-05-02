@@ -1,0 +1,19 @@
+  .Inputimg {
+    font-family: sans-serif;
+    /* text-align: center; */
+  }
+  .image-item {
+    display: block;
+  }
+  .image-item__btn-wrapper {
+    display: flex;
+
+
+  }
+  .image-item__btn-wrapper  > button {
+    margin: 0 2px;
+  }
+  button {
+    height: 40px;
+  }
+  

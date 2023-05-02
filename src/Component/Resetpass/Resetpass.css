@@ -1,0 +1,15 @@
+label[for="firstname"] {
+    color: rgb(159, 156, 156);
+  }
+label[for="lastname"] {
+    color: rgb(159, 156, 156);
+  }
+  label[for="email"] {
+    color: rgb(159, 156, 156);
+  }
+label[for="password"] {
+    color: rgb(159, 156, 156);
+  }
+label[for="confirmpassword"] {
+    color: rgb(159, 156, 156);
+  }

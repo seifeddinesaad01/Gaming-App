@@ -1,0 +1,86 @@
+.foot {
+  /* background-image: url("../img/skill-bg.png"); */
+  background-color: rgb(75, 74, 74);
+  /* height: 50vh; */
+  margin-top: 0%;
+  border-top: 9px solid #343beb;
+}
+.fot {
+  font-size: 40px;
+  color: white !important;
+  font-family: "PT Sans", sans-serif;
+  margin-top: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  /* flex-wrap: wrap; */
+}
+.d1 {
+  /* border-right: 2px solid blue; */
+  padding-right: 2rem;
+}
+
+@media only screen and (max-width: 917px) {
+  .footer__content {
+    flex-direction: column;
+    gap: 0rem;
+  }
+  .d1 {
+    margin-top: 0rem;
+  }
+
+  @media only screen and (max-width: 640px) {
+    .fot {
+      grid-template-columns: 1fr !important;
+    }
+    .logofoot {
+      justify-content: center;
+      margin-left: 5rem;
+    }
+  }
+
+  .fot {
+    flex-direction: column;
+  }
+}
+.logofoot {
+  padding: 2rem;
+}
+.middle {
+  display: flex;
+  margin-left: 110px;
+  margin-top: 130px;
+  margin-bottom: 50px;
+}
+.texte {
+  color: aliceblue !important;
+  font-size: 20px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+.verticale-line {
+  border-left: 1px solid #343beb;
+  height: 8vh;
+  margin: 0 10px;
+}
+.social {
+  width: 35px;
+  height: 35px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.fott {
+  display: flex;
+  margin-top: 160px;
+  margin-bottom: 50px;
+  margin-left: 90px;
+}

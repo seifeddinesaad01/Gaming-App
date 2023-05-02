@@ -1,0 +1,37 @@
+.App {
+    
+  }
+  
+  .VideoInput {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+  }
+  
+  .VideoInput_input {
+    display: none;
+  }
+  
+  .VideoInput_video {
+    display: block;
+    margin: 0;
+    margin-bottom: 2px;
+  }
+  
+  .VideoInput_footer {
+    width: 100%;
+    min-height: 40px;
+    line-height: 40px;
+    text-align: center;
+  }
+  
+  .VideoInput_buttons {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .VideoInput_buttons > button {
+    margin: 0 2px;
+  }

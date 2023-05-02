@@ -1,0 +1,288 @@
+.gridblack {
+  margin-top: 14vh;
+  background-color: #161616 !important;
+  height: 100vh !important;
+  width: 100vw !important;
+  min-height: calc(235px + (100px * (20 - 1)));
+}
+
+@media screen and (max-width:1000px) {
+  .gridblack {
+    margin-top: 10vh;
+
+  }
+}
+
+.divgris {
+  display: flex;
+  flex-direction: row;
+  background-color: #222222 !important;
+  width: 100vw !important;
+  height: 52vh;
+  /* min-height: calc(235px + (100px * (19 - 1))); */
+}
+
+@media screen and (max-width:1000px) {
+  .divgris {
+    height: 72vh;
+
+  }
+}
+
+.tpimgbg {
+  margin-top: 0;
+  background-size: cover;
+  height: 20vh;
+  width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.title-p {
+  margin-top: 19vh;
+  margin-left: 2vw;
+  font-size: 8vh;
+  margin-bottom: 1vh;
+  color: white;
+}
+
+.details-p {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  align-items: baseline;
+}
+
+@media screen and (max-width:1000px) {
+  .details-p {
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1vw;
+
+  }
+}
+
+.manette-p {
+  width: 30px;
+  height: 30px;
+  margin-left: 3vw;
+  margin-right: 1.5vw;
+}
+
+@media screen and (max-width:1000px) {
+  .manette-p {
+    width: 10px;
+    height: 10px;
+
+  }
+}
+
+.jeux-p {
+  font-size: 3vh;
+  display: flex;
+  align-items: center;
+  margin-right: 3vw;
+}
+
+.particon-p {
+  width: 30px;
+  height: 30px;
+  margin-right: 1.5vw;
+  margin-left: 3vw;
+
+}
+
+@media screen and (max-width:1000px) {
+  .particon-p {
+    width: 10px;
+    height: 10px;
+
+  }
+}
+
+.participants-p {
+  font-size: 3vh;
+  display: flex;
+  align-items: center;
+  margin-right: 3vw;
+}
+
+.calendar-p {
+  width: 30px;
+  height: 30px;
+  margin-right: 1.5vw;
+  margin-left: 3vw;
+
+}
+
+@media screen and (max-width:1000px) {
+  .calendar-p {
+    width: 10px;
+    height: 10px;
+
+  }
+}
+
+.date-p {
+  font-size: 3vh;
+  display: flex;
+  align-items: center;
+}
+
+.time-p {
+  margin-right: 5vw;
+  display: flex;
+  align-items: center;
+  margin-left: 1vw;
+}
+
+.location-p {
+  width: 30px;
+  height: 30px;
+  margin-right: 1.5vw;
+  margin-left: 3vw;
+
+}
+
+@media screen and (max-width:1000px) {
+  .location-p {
+    width: 10px;
+    height: 10px;
+
+  }
+}
+
+.region-p {
+  font-size: 3vh;
+  display: flex;
+  align-items: center;
+}
+
+.b1 {
+  margin-top: 2.5vw;
+
+}
+
+.css-wdz4al {
+  width: 100vw !important;
+}
+
+/* couleur d'ecriture not selected*/
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
+  color: white !important;
+  font-size: 2.5vh;
+  background-color: #343beb;
+}
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root:hover {
+  color: #343beb !important;
+  background-color: #222222;
+}
+
+/* couleur selected ecriture */
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+  color: #343beb !important;
+}
+
+/* couleur de la bordure   */
+.css-1aquho2-MuiTabs-indicator {
+  background-color: #343beb !important;
+  height: 4px !important;
+}
+
+/* couleur de ecriture dans la page  */
+.css-13xfq8m-MuiTabPanel-root {
+  color: white;
+  padding: 0 !important;
+
+}
+
+
+.Detail {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: auto;
+  background-color: #222222;
+  margin-top: 1vh;
+}
+
+.GR {
+  margin-top: 3vh;
+  color: darkgrey;
+  font-size: 2vh;
+  margin-left: 4vw;
+}
+
+.G {
+  color: white;
+  margin-left: 5vw;
+  font-size: 3vh;
+  margin-top: 2vh;
+}
+
+.R {
+  color: white;
+  margin-left: 5vw;
+  font-size: 3vh;
+  margin-top: 2vh;
+}
+
+.borderblack {
+  margin-top: 5vh;
+  margin-left: 3vw;
+  border-bottom: 2px solid #161616;
+  width: 92vw;
+
+}
+
+
+.l {
+  margin-left: 5vw;
+  font-size: 3vh;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+.linkparticipate {
+  text-decoration: none;
+  margin-left: 5vw;
+  font-size: 5vh;
+  margin-bottom: 4vh;
+  color: #343beb;
+  animation: color-change 1s infinite;
+}
+
+@keyframes color-change {
+  0% {
+    color: #343beb;
+  }
+
+  50% {
+    color: white;
+  }
+
+  100% {
+    color: #343beb;
+  }
+}
+
+.br {
+  margin-top: 3vh;
+  margin-left: 3vw;
+
+}
+
+/* .linkparticipate:hover {
+  color: white;
+  text-decoration: underline;
+  text-decoration: none;
+} */
+.Rules {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: auto;
+  background-color: #222222;
+  margin-top: 1vh;
+}

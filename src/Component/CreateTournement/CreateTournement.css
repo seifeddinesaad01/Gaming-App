@@ -1,0 +1,63 @@
+label[for="name"] {
+  color: rgb(159, 156, 156);
+}
+
+label[for="lastname"] {
+  color: rgb(159, 156, 156);
+}
+
+label[for="email"] {
+  color: rgb(159, 156, 156);
+}
+
+label[for="password"] {
+  color: rgb(159, 156, 156);
+}
+
+label[for="confirmpassword"] {
+  color: rgb(159, 156, 156);
+}
+
+.date {
+  color: rgb(159, 156, 156);
+  font-style: oblique 10deg;
+  font-size: 20px;
+
+}
+
+.date input[type="date"]::-webkit-calendar-picker-indicator {
+  color: rgb(159, 156, 156);
+  filter: invert(1);
+  position: center;
+  margin-right: 5px;
+}
+
+input {
+  background-color: #161616;
+  color: rgb(159, 156, 156);
+  padding-left: 12px;
+  border-radius: 2px;
+  height: 56px;
+  width: 100%;
+  border: 1px solid #a9a9a9;
+  border-radius: 5px;
+
+}
+.Inputimg {
+  font-family: sans-serif;
+  /* text-align: center; */
+}
+.image-item {
+  display: block;
+}
+.image-item__btn-wrapper {
+  display: flex;
+
+
+}
+.image-item__btn-wrapper  > button {
+  margin: 0 2px;
+}
+button {
+  height: 40px;
+}

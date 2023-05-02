@@ -1,0 +1,30 @@
+label[for="firstname"] {
+    color: rgb(159, 156, 156);
+  }
+label[for="lastname"] {
+    color: rgb(159, 156, 156);
+  }
+  label[for="email"] {
+    color: rgb(159, 156, 156);
+  }
+label[for="password"] {
+    color: rgb(159, 156, 156);
+  }
+label[for="confirmpassword"] {
+    color: rgb(159, 156, 156);
+  }
+
+  .forget__btn{
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    width: 8rem;
+    cursor: pointer;
+    transition: 0.5s ease all;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+  .forget__btn:hover{
+    background-color: white;
+    color: black;
+  }

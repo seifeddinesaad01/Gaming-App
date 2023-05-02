@@ -1,0 +1,57 @@
+.boutton {
+    background-color: #161616 !important;
+    height: 100vh !important;
+    width: 100% !important;
+    min-height: calc(235px + (100px * (5 - 1)));
+
+}
+.barLeft{
+    background-color: #222222 !important;
+    color: white !important;
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+    margin-right: 8px !important;
+    margin-left: 2px !important;
+    border-radius: 8px !important;
+
+}
+.barRight{
+    background-color: #222222 !important;
+    color: white !important;
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+    margin-left: 8px !important;
+    border-radius: 8px !important;
+}
+.button {
+    color: #FFFFFF !important;
+    width: 100% !important;
+    height: 60px !important;
+    justify-content: flex-start !important;
+    font-size: 1rem !important;
+    align-items: center !important;
+    text-transform: capitalize !important;
+    border-radius: 0% !important;
+    max-width: 100% !important;
+  }
+  .button:active {
+    border-left: 3px solid #434ebe !important;
+}
+  @media (max-width: 768px) {
+    .button {
+      font-size: 1.2rem !important;
+    }
+  }
+  @media (max-width: 480px) {
+    .button {
+      font-size: 1rem !important;
+    }
+  }
+  h1 {
+    font-size: 40px; /* change the value to the desired font size */
+    color: white !important;
+    font-family: 'PT Sans', sans-serif;
+  }
+  .MuiButton-label{
+    margin-left: 10px;
+  }
