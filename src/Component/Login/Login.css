@@ -22,6 +22,10 @@
   }
 }
 
+.login__error {
+  color: red;
+}
+
 @media screen and (max-width: 840px) {
   .login__container {
     flex-wrap: wrap;

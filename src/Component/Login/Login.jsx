@@ -1,109 +1,23 @@
 import * as React from "react";
 import "../Login/Login.css";
-import axios from "axios";
-import Stack from "@mui/material/Stack";
-import MuiAlert from "@mui/material/Alert";
-import IconButton from "@mui/material/IconButton";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import InputLabel from "@mui/material/InputLabel";
-import InputAdornment from "@mui/material/InputAdornment";
-import FormControl from "@mui/material/FormControl";
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+
 import { useNavigate, NavLink, Link, useParams } from "react-router-dom";
 import { CssBaseline } from "@material-ui/core";
 import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import loginimg from "../../assets/img/inscrit.PNG";
-
+const LoginSchema = Yup.object().shape({
+  email: Yup.string().email("Invalid email").required("Email is required"),
+  password: Yup.string()
+    .min(6, "Password must be at least 6 characters")
+    .required("Password is required"),
+});
 function Login() {
-  /*****alert mui*****/
-  const Alert = React.forwardRef(function Alert(props, ref) {
-    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-  });
-  /*****alert mui*****/
-  const navigate = useNavigate();
-  const [errorMessage, setErrorMessage] = useState(null);
-  const [isSubmit, setIsSubmit] = useState(false);
-  const [formErrors, setFormErrors] = useState({});
-  const [values, setValues] = React.useState({
-    email: "",
-    password: "",
-  });
-  const validateForm = (values) => {
-    const error = {};
-    const gmail = /^[^\s+@]+@[^\s@]+\.[^\s@]{2,}$/i;
+  const [showPassword, setShowPassword] = useState(false);
 
-    if (!values.email) {
-      error.email = "Email is required";
-    } else if (!gmail.test(values.email)) {
-      error.email = "Format not valid!";
-    }
-
-    if (!values.password) {
-      error.password = "Password is required";
-    }
-    return error;
-  };
-
-  const [showPassword, setShowPassword] = React.useState(false);
-
-  const handleClickShowPassword = () => setShowPassword((show) => !show);
-
-  const handleMouseDownPassword = (event) => {
-    event.preventDefault();
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setValues({
-      ...values,
-      [name]: value,
-    });
-  };
-  const isValid = () => {
-    if (values.email === "") {
-      return false;
-    }
-    return true;
-  };
-  const handleclick = (e) => {
-    e.preventDefault();
-    setFormErrors(validateForm(values));
-    setIsSubmit(true);
-  };
-  //recuperer les donnees d'url
-  /***envoi des données par axios ***/
-  useEffect(() => {
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-      const post = {
-        email: values.email,
-        password: values.password,
-      };
-      axios
-        .post("http://localhost:5000/user/login", post)
-        .then((response) => {
-          if (response.status === 200)
-            Swal.fire({
-              title: "User logged successfully",
-              icon: "success",
-              showCancelButton: false,
-            });
-          navigate(`/user/profile`, { replace: true });
-        })
-        .catch((error) => {
-          Swal.fire({
-            title: "user does not exist",
-            icon: "error",
-            confirmButtonText: "Signup",
-            showCancelButton: false,
-          });
-          console.log("user non trouvé");
-          navigate(`/user/sign`, { replace: true });
-          // console.log(error.response.data);
-        });
-    }
-  }, [formErrors]);
+  const togglePassword = () => setShowPassword(!showPassword);
   return (
     <div className="login__container">
       <div className="login__left">
@@ -167,87 +81,80 @@ function Login() {
         </div>
 
         {/*****************formulaire****************/}
-        <FormControl required sx={{ m: 1, width: "52ch" }} variant="outlined">
-          <InputLabel htmlFor="email">Email</InputLabel>
-          <OutlinedInput
-            name="email"
-            onChange={handleChange}
-            value={values.email}
-            id="email"
-            label="Email"
-            sx={{
-              "& fieldset": {
-                borderColor: "#fff",
-              },
-            }}
-            style={{ color: "#ffffff" }}
-          />
-          <Stack spacing={2} sx={{ width: "100%" }}>
-            {formErrors.email && (
-              <Alert severity="error">{formErrors.email}</Alert>
-            )}
-          </Stack>
-        </FormControl>
+        <Formik
+          initialValues={{ email: "", password: "" }}
+          validationSchema={LoginSchema}
+          onSubmit={(values) => {
+            console.log(values);
+          }}
+        >
+          {({ errors, touched }) => (
+            <Form>
+              <div className="form-group">
+                <label htmlFor="email">Email</label>
+                <Field
+                  type="email"
+                  name="email"
+                  id="email"
+                  className={`form-control${
+                    errors.email && touched.email ? " is-invalid" : ""
+                  }`}
+                />
+                <div className="login__error">
+                  <ErrorMessage
+                    name="email"
+                    component="div"
+                    className="invalid-feedback"
+                  />
+                </div>
+              </div>
 
-        <FormControl required sx={{ m: 1, width: "52ch" }} variant="outlined">
-          <InputLabel htmlFor="password">Password</InputLabel>
-          <OutlinedInput
-            name="password"
-            onChange={handleChange}
-            value={values.password}
-            id="password"
-            label="Password"
-            sx={{
-              "& fieldset": {
-                borderColor: "#fff",
-              },
-            }}
-            style={{ color: "#fff" }}
-            type={showPassword ? "text" : "password"}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  style={{ color: "rgb(159, 156, 156)" }}
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword}
-                  onMouseDown={handleMouseDownPassword}
-                  edge="end"
-                >
-                  {showPassword ? <Visibility /> : <VisibilityOff />}
-                </IconButton>
-              </InputAdornment>
-            }
-          />
-          <Stack spacing={2} sx={{ width: "100%" }}>
-            {formErrors.password && (
-              <Alert severity="error">{formErrors.password}</Alert>
-            )}
-          </Stack>
-        </FormControl>
-        <FormControl sx={{ width: "52ch" }}>
-          <Link
-            style={{
-              textDecoration: "none",
-              color: "#fff",
-              marginLeft: "1rem",
-            }}
-            to={"/user/forgot-password"}
-          >
-            {" "}
-            Forgot Password ?
-          </Link>
-        </FormControl>
+              <div className="form-group">
+                <label htmlFor="password">Password</label>
+                <div className="input-group">
+                  <Field
+                    type={showPassword ? "text" : "password"}
+                    name="password"
+                    id="password"
+                    className={`form-control${
+                      errors.password && touched.password ? " is-invalid" : ""
+                    }`}
+                  />
+                  <div className="input-group-append">
+                    <button
+                      className="btn btn-outline-secondary"
+                      type="button"
+                      onClick={togglePassword}
+                    >
+                      {showPassword ? "Hide" : "Show"}
+                    </button>
+                  </div>
+                  <div className="login__error">
+                    <ErrorMessage
+                      name="password"
+                      component="div"
+                      className="invalid-feedback"
+                    />
+                  </div>
+                </div>
+              </div>
 
+              {/* <button type="submit" className="btn btn-primary">
+                Login
+              </button> */}
+            </Form>
+          )}
+        </Formik>
         <div
-          onClick={handleclick}
+          // onClick={handleclick}
           style={{ float: "left", marginLeft: "130px" }}
         >
           <button
             className="login__btn"
-            disabled={isValid() ? false : true}
+            // disabled={isValid() ? false : true}
             name="button"
             type="submit"
-            onClick={handleclick}
+            // onClick={handleclick}
           >
             Login
           </button>
